@@ -1,0 +1,152 @@
+html, body {
+    margin: 0px;
+    height: 100%;
+}
+
+.purple-bg {
+    background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    z-index: -1;
+}
+
+.wrapper {
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 65%;
+    background-color: white;
+    z-index: 9;
+    border-radius: 25px;
+    
+}
+
+#title {
+    color: hsl(238, 29%, 16%);
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.questions {
+    position: absolute;
+    width: 55%;
+    height: 90%;
+    left: 40%;
+    z-index: 13;
+    top: 6%;
+    overflow: hidden;
+
+}
+
+.accordion {
+    color: hsl(238, 29%, 16%);
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    transition: 0.2s;
+    background-color: white;
+    cursor: pointer;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.2s;
+}
+
+.accordion:after {
+    content:url('./images/icon-arrow-down.svg');
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content:url('./images/icon-arrow-down.svg');
+    transform: scaleY(-1);
+}
+
+.active, .accordion:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+.accordion:focus {
+    color: black;
+    font-weight: 700;
+}
+
+.accordion:active{
+    color: hsl(14, 88%, 65%);
+    font-weight: 700;
+}
+.panel {
+    color: hsl(238, 29%, 16%);
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+
+.inner-images {
+    position: relative;
+    z-index: 10;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#woman-desktop {
+    position:absolute;
+    top:50%;
+    left: 37%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+}
+
+#pattern-desktop {
+    position: absolute;
+    top:35%;
+    left: -17.5%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#box {
+    position: fixed;
+    top:50%;
+    left: 0.43%;
+    transform: translate(-50%, -50%);
+    z-index: 14;
+}
+
+.solid {
+    border-top: 1px solid hsl(240, 5%, 91%);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(233, 233, 233)
+    
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
