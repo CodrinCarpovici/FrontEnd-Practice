@@ -3,12 +3,22 @@
 $primary-white: #fff;
 $primary-violet: #7732e6;
 $primary-dark: rgba(255, 255, 255, 0);
+$primary-font-family: "Roboto Condensed", sans-serif;
+$primary-red: #ef4035;
+$primary-hover-red: #f33501;
 
 body {
-  font-family: "Roboto Condensed" sans-serif;
+  font-family: $primary-font-family;
 
   .container {
-    /******************************** NAVBAR **************************************/
+    position: relative;
+    z-index: 1000;
+    /******************************** NAVBAR **********************************/
+    nav {
+      position: fixed;
+      z-index: inherit;
+    }
+
     .logo {
       width: 13.25rem;
       margin-left: 5%;
@@ -16,12 +26,12 @@ body {
     }
 
     .hamburger {
-        color: $primary-white;
-        :active {
-            color: $primary-violet;
-        }
+      color: $primary-white;
+      :active {
+        color: $primary-violet;
+      }
     }
-    /*------- MENU LINKS -------*/
+    /*--------- MENU LINKS ----------*/
     nav a.nav-link {
       font-size: 0.8rem;
       letter-spacing: 0.0375rem;
@@ -51,7 +61,82 @@ body {
     }
 
     .navbar-nav > li > a:hover {
-        border-top: 0.1875rem solid $primary-violet;
+      border-top: 0.1875rem solid $primary-violet;
+    }
+  }
+  /******************************** HEADER ************************************/
+  .header-wrapper {
+    position: relative;
+    background: url(./assets/img/keyboard.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+
+    .main-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: $primary-font-family;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+
+      h1 {
+        color: $primary-violet;
+        text-transform: uppercase;
+      }
+
+      /*---------- TYPED TEXT -----------*/
+      .typed-string {
+        font-size: 2rem;
+        color: $primary-white;
+      }
+
+      /*---------- HEADER MAIN OFFER BUTTON -----------*/
+      .btn-main-offer {
+        border: 1px solid $primary-red;
+        text-transform: uppercase;
+        border-radius: 0;
+        padding: 0.625rem 0.75rem 0.75rem 0.75rem;
+        color: $primary-white;
+        margin-top: 2rem;
+      }
+
+      .btn-main-offer:hover {
+        text-decoration: none;
+        background-color: $primary-hover-red;
+        transition: 0.2s ease-in-out;
+      }
+    }
+  }
+
+  /*---------- PARTICLES -----------*/
+  .tsparticles-canvas-el {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    .particles-canvas {
+      display: none;
+    }
+
+    .main-info h1 {
+      font-size: 1.5rem !important;
+    }
+
+    .typed-string {
+      font-size: 1.7rem;
+    }
+    .navbar-brand {
+      width: 7rem;
     }
   }
 }

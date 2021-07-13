@@ -1,13 +1,25 @@
+import Typed from 'react-typed';
+
 const Header = (props) => {
     return (
-        <header>
-            <h1>{props.title}</h1>
-        </header>
+        <div className="header-wrapper">
+            <div className="main-info">
+                    <h1>{props.title}</h1>
+                    <Typed 
+                        className="typed-string"
+                        strings={["Web Design", "Frontend Development", "UI and UX Design", "Web Development"]}
+                        typeSpeed={40}
+                        backSpeed={60}
+                        loop    
+                    />
+                    <a href="#" className="btn-main-offer">Contact Me</a>
+            </div>
+        </div>
     )
 }
 
 Header.defaultProps = {
-    title: 'Codrin Gabriel Carpovici'
+    title: 'Front End Web Development'
 }
 
 export default Header
