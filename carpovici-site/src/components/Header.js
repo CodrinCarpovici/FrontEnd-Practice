@@ -19,7 +19,7 @@ const Header = (props) => {
 }
 
 Header.defaultProps = {
-    title: 'Front End Web Development'
+    title: 'FrontEnd Web Development'
 }
 
 export default Header

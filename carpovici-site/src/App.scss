@@ -6,62 +6,71 @@ $primary-dark: rgba(255, 255, 255, 0);
 $primary-font-family: "Roboto Condensed", sans-serif;
 $primary-red: #ef4035;
 $primary-hover-red: #f33501;
+$primary-blue: #07c3fc;
 
 body {
   font-family: $primary-font-family;
+  width: "device-width";
 
-  .container {
-    position: relative;
-    z-index: 1000;
-    /******************************** NAVBAR **********************************/
-    nav {
-      position: fixed;
-      z-index: inherit;
-    }
+  /******************************** NAVBAR **********************************/
+  .navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 
-    .logo {
-      width: 13.25rem;
-      margin-left: 5%;
-      margin-top: 14%;
-    }
-
-    .hamburger {
-      color: $primary-white;
-      :active {
-        color: $primary-violet;
+    .container {
+      .logo {
+        width: 13.25rem;
+        vertical-align: middle;
+        padding: 0 !important;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
       }
-    }
-    /*--------- MENU LINKS ----------*/
-    nav a.nav-link {
-      font-size: 0.8rem;
-      letter-spacing: 0.0375rem;
-      cursor: pointer;
-    }
 
-    nav ul li {
-      text-transform: uppercase;
-    }
+      .hamburger {
+        color: $primary-white;
+        vertical-align: middle;
+        :active {
+          color: $primary-violet;
+        }
+      }
+      /*--------- MENU LINKS ----------*/
+      nav a.nav-link {
+        font-size: 0.8rem;
+        letter-spacing: 0.0375rem;
+        cursor: pointer;
+      }
 
-    .navbar-nav > li > a {
-      margin-right: 0.75rem;
-      margin-left: 0.75rem;
-      color: $primary-white !important;
-      border-top: 0.1875rem solid $primary-dark;
-    }
+      nav ul li {
+        text-transform: uppercase;
+      }
 
-    .navbar-brand {
-      max-width: 17.25rem;
-      padding: 0 !important;
-      height: 6rem !important;
-    }
+      .navbar-nav > li > a {
+        margin-right: 0.75rem;
+        margin-left: 0.75rem;
+        color: $primary-white !important;
+        border-top: 0.1875rem solid $primary-dark;
+      }
 
-    .navbar-nav > li > a.active,
-    .navbar-nav > li > a.active:focus {
-      border-top: 0.1875rem solid $primary-violet;
-    }
+      .navbar-brand {
+        max-width: 17.25rem;
+        padding: 0 !important;
+        height: 6rem !important;
+        text-align: center;
+        position: relative;
+      }
 
-    .navbar-nav > li > a:hover {
-      border-top: 0.1875rem solid $primary-violet;
+      .navbar-nav > li > a.active,
+      .navbar-nav > li > a.active:focus {
+        border-top: 0.1875rem solid $primary-violet;
+      }
+
+      .navbar-nav > li > a:hover {
+        border-top: 0.1875rem solid $primary-violet;
+      }
     }
   }
   /******************************** HEADER ************************************/
@@ -79,6 +88,7 @@ body {
       align-items: center;
       text-align: center;
       font-family: $primary-font-family;
+      font-weight: 500;
       position: absolute;
       top: 0;
       left: 0;
@@ -87,8 +97,11 @@ body {
       z-index: 1;
 
       h1 {
-        color: $primary-violet;
+        font-weight: 700;
         text-transform: uppercase;
+        background: linear-gradient(to right, $primary-violet, $primary-blue);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       /*---------- TYPED TEXT -----------*/
@@ -138,5 +151,145 @@ body {
     .navbar-brand {
       width: 7rem;
     }
+  }
+
+  /******************************* ABOUT ME ***********************************/
+  #about {
+    position: relative;
+    font-family: $primary-font-family;
+    padding: 0.5rem;
+    margin-top: 6.25rem;
+    margin-bottom: 6.25rem;
+  }
+
+  .about-wrapper {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  @media (max-width: 991px) {
+    .about-text {
+      margin-top: 2.5rem;
+      margin-left: 0.313rem;
+    }
+  }
+  .about-text h3 {
+    font-size: 2.813rem;
+    font-weight: 700;
+    margin: 0 0 0.625rem;
+    color: $primary-violet !important;
+  }
+  @media (max-width: 768px) {
+    .about-text h3 {
+      font-size: 2.188rem;
+    }
+  }
+  .about-text h4 {
+    font-weight: 600;
+    margin-bottom: 0.938rem;
+    color: $primary-blue !important;
+  }
+  @media (max-width: 767px) {
+    .about-text h4 {
+      font-size: 1.125rem;
+    }
+  }
+  .about-text p {
+    font-size: 1.125rem;
+  }
+  .about-text p mark {
+    font-weight: 600;
+    color: #3a3973;
+  }
+  .about-text .btn-bar {
+    padding-top: 0.5rem;
+  }
+  .about-text .btn-bar a {
+    min-width: 9.375rem;
+    text-align: center;
+    margin-right: 0.625rem;
+  }
+
+  .about-img {
+    border: 0.188rem solid $primary-violet;
+    padding: 0.625rem;
+    background: url(./assets/img/profile-pic.png) no-repeat center center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 25rem;
+    width: 25rem;
+    border-radius: 50%;
+    margin-left: 5.5%;
+  }
+
+  @media (max-width: 991px) {
+    .about-img {
+      margin-top: 1.875rem;
+      margin-left: 20%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-img {
+      height: 20rem;
+      width: 20rem;
+      margin-left: 5.5%;
+      margin-right: 5%;
+    }
+  }
+
+  .counter-section {
+    padding: 2.5rem 1.25rem;
+  }
+  .counter-section .count-data {
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+  .counter-section .count {
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.625rem;
+  }
+  .counter-section p {
+    font-weight: 500;
+    margin: 0;
+    color: #fe4f6c;
+  }
+  .theme-color {
+    color: #fe4f6c;
+  }
+
+  .gray-bg {
+    background-color: #ebf4fa;
+  }
+  .px-btn.theme {
+    background: $primary-violet;
+    color: #ffffff;
+    border: 0.125rem solid $primary-red;
+  }
+  .px-btn {
+    padding: 0 1.25rem;
+    line-height: 2.625rem;
+    border: 0.125rem solid transparent;
+    position: relative;
+    display: inline-block;
+    background: none;
+    border: none;
+    -moz-transition: ease all 0.35s;
+    -o-transition: ease all 0.35s;
+    -webkit-transition: ease all 0.35s;
+    transition: ease all 0.35s;
+    border-radius: 0.313rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .px-btn.theme-t {
+    background: transparent;
+    border: 0.125rem solid $primary-red;
+    color: $primary-violet;
   }
 }
