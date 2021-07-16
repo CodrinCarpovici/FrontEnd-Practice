@@ -4,6 +4,7 @@ import Particles from 'react-particles-js';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import About from './components/About';
+import { Button } from 'bootstrap';
 
 function App() {
   return (

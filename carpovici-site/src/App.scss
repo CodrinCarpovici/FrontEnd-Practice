@@ -4,12 +4,12 @@ $primary-white: #fff;
 $primary-violet: #7732e6;
 $primary-dark: rgba(255, 255, 255, 0);
 $primary-font-family: "Roboto Condensed", sans-serif;
-$primary-red: #ef4035;
-$primary-hover-red: #f33501;
+$primary-red: #ff5549;
+$primary-hover-red: #ad2a06;
 $primary-blue: #07c3fc;
 
 body {
-  font-family: $primary-font-family;
+  font-family: $primary-font-family !important;
   width: "device-width";
 
   /******************************** NAVBAR **********************************/
@@ -33,9 +33,12 @@ body {
       .hamburger {
         color: $primary-white;
         vertical-align: middle;
-        :active {
-          color: $primary-violet;
-        }
+      }
+
+      .navbar-toggler:focus,
+      .navbar-toggler:active {
+        transition: ease-in-out 0.2s;
+        border-color: $primary-violet;
       }
       /*--------- MENU LINKS ----------*/
       nav a.nav-link {
@@ -169,40 +172,25 @@ body {
     overflow: hidden;
   }
 
-  @media (max-width: 991px) {
-    .about-text {
-      margin-top: 2.5rem;
-      margin-left: 0.313rem;
-    }
-  }
-  .about-text h3 {
+  /*************** ABOUT TEXT *******************/
+  #about-header {
     font-size: 2.813rem;
     font-weight: 700;
     margin: 0 0 0.625rem;
     color: $primary-violet !important;
   }
-  @media (max-width: 768px) {
-    .about-text h3 {
-      font-size: 2.188rem;
-    }
-  }
-  .about-text h4 {
+
+  #about-subHeader {
     font-weight: 600;
     margin-bottom: 0.938rem;
     color: $primary-blue !important;
   }
-  @media (max-width: 767px) {
-    .about-text h4 {
-      font-size: 1.125rem;
-    }
-  }
-  .about-text p {
+
+  .about-p {
     font-size: 1.125rem;
   }
-  .about-text p mark {
-    font-weight: 600;
-    color: #3a3973;
-  }
+
+  /************* ABOUT BUTTON *****************/
   .about-text .btn-bar {
     padding-top: 0.5rem;
   }
@@ -210,60 +198,6 @@ body {
     min-width: 9.375rem;
     text-align: center;
     margin-right: 0.625rem;
-  }
-
-  .about-img {
-    border: 0.188rem solid $primary-violet;
-    padding: 0.625rem;
-    background: url(./assets/img/profile-pic.png) no-repeat center center;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    height: 25rem;
-    width: 25rem;
-    border-radius: 50%;
-    margin-left: 5.5%;
-  }
-
-  @media (max-width: 991px) {
-    .about-img {
-      margin-top: 1.875rem;
-      margin-left: 20%;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .about-img {
-      height: 20rem;
-      width: 20rem;
-      margin-left: 5.5%;
-      margin-right: 5%;
-    }
-  }
-
-  .counter-section {
-    padding: 2.5rem 1.25rem;
-  }
-  .counter-section .count-data {
-    margin-top: 0.625rem;
-    margin-bottom: 0.625rem;
-  }
-  .counter-section .count {
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0 0 0.625rem;
-  }
-  .counter-section p {
-    font-weight: 500;
-    margin: 0;
-    color: #fe4f6c;
-  }
-  .theme-color {
-    color: #fe4f6c;
-  }
-
-  .gray-bg {
-    background-color: #ebf4fa;
   }
   .px-btn.theme {
     background: $primary-violet;
@@ -287,9 +221,83 @@ body {
     font-weight: 500;
   }
 
+  .px-btn:hover {
+    background-color: $primary-white;
+    color: $primary-violet;
+  }
+
   .px-btn.theme-t {
     background: transparent;
     border: 0.125rem solid $primary-red;
     color: $primary-violet;
+    margin-left: 3px;
+  }
+
+  .px-btn.theme:hover {
+    transition: ease-in-out 0.2s;
+    color: $primary-blue;
+    background-color: $primary-violet;
+  }
+
+  .px-btn.theme-t:hover {
+    transition: ease-in-out 0.2s;
+    background-color: $primary-hover-red;
+    color: $primary-white;
+  }
+
+  /************* ABOUT IMAGE ******************/
+  .img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-img {
+    border: 0.188rem solid $primary-violet;
+    padding: 0.625rem;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    margin-left: 5.5%;
+  }
+
+  /********* ABOUT MEDIA QUERIES **************/
+
+  @media (max-width: 768px) {
+    .about-img {
+      height: 15rem;
+      width: 15rem;
+      margin-left: 5.5%;
+      margin-right: 5%;
+    }
+
+    .about-text h3 {
+      font-size: 2.188rem;
+    }
+
+    .about-text h4 {
+      font-size: 1.125rem;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .about-img {
+      height: 15rem;
+      width: 15rem;
+    }
+  }
+
+  @media (max-width: 280px) {
+    .px-btn {
+      margin-left: 20%;
+      margin-top: 3%;
+    }
+
+    .px-btn.theme {
+      margin-left: 23%;
+    }
+
+    .px-btn.theme-t {
+      margin-left: 20%;
+    }
   }
 }
