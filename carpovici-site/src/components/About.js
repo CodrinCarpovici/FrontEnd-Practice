@@ -3,7 +3,7 @@ import author from '../assets/img/author.png'
 
 const About = () => {
     return (
-            <div className="about-wrapper py-5" id="about">
+            <div className="container py-5" id="about">
                 <div className="row">
                     <div className="col-lg-6 col-xm-12">
                         <div className="img-wrapper mb-5">

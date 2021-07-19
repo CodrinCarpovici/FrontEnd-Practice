@@ -7,7 +7,7 @@ const Header = (props) => {
                     <h1>{props.title}</h1>
                     <Typed 
                         className="typed-string"
-                        strings={["Web Design", "Frontend Development", "UI and UX Design", "Web Development"]}
+                        strings={["Web Design", "Frontend Development", "UI &#38; UX Design", "Web Development"]}
                         typeSpeed={40}
                         backSpeed={60}
                         loop    

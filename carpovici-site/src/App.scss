@@ -2,15 +2,90 @@
 
 $primary-white: #fff;
 $primary-violet: #7732e6;
-$primary-dark: rgba(255, 255, 255, 0);
-$primary-font-family: "Roboto Condensed", sans-serif;
 $primary-red: #ff5549;
 $primary-hover-red: #ad2a06;
 $primary-blue: #07c3fc;
+$primary-blue-dark: #1093bb;
+$primary-dark: rgb(52, 58, 64);
+$primary-light-violet: #ac8be0;
+$primary-background-gradient: linear-gradient(
+  to right,
+  $primary-light-violet,
+  $primary-blue
+);
+$primary-background-gradient-vertical: linear-gradient(
+  to bottom,
+  $primary-light-violet,
+  $primary-blue
+);
+$primary-background-gradient-vertical-hover: linear-gradient(
+  to bottom,
+  $primary-violet,
+  $primary-blue-dark
+);
+$primary-font-family: "Roboto Condensed", sans-serif;
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/******************************** SCROLLBAR ********************************/
+  /*::-webkit-scrollbar the scrollbar.
+  ::-webkit-scrollbar-button the buttons on the scrollbar (arrows pointing upwards and downwards).
+  ::-webkit-scrollbar-thumb the draggable scrolling handle.
+  ::-webkit-scrollbar-track the track (progress bar) of the scrollbar.
+  ::-webkit-scrollbar-track-piece the track (progress bar) NOT covered by the handle.
+  ::-webkit-scrollbar-corner the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.
+  ::-webkit-resizer the draggable resizing handle that appears at the bottom corner of some elements.*/
+
+  ::-webkit-scrollbar {
+    width: 0.625rem;
+  }
+
+  ::-webkit-scrollbar-button {
+
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $primary-background-gradient-vertical;
+    border-radius: 0.5vw;
+    min-height: 1px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    transition: 0.3s;
+    background: $primary-background-gradient-vertical-hover;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(0, 0, 0);
+    border-radius: 0.5vw;
+    background: rgba(255, 255, 255, 0);
+  }
+
+  ::-webkit-scrollbar-track-piece {
+
+  }
+
+  ::-webkit-scrollbar-corner {
+
+  }
+
+  ::-webkit-resizer {
+
+  }
+
 
 body {
   font-family: $primary-font-family !important;
-  width: "device-width";
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: overlay;
 
   /******************************** NAVBAR **********************************/
   .navbar {
@@ -18,8 +93,11 @@ body {
     top: 0;
     width: 100%;
     z-index: 10;
+    padding: 0px !important;
+    margin: 0px !important;
 
     .container {
+      padding-top: 0px !important;
       .logo {
         width: 13.25rem;
         vertical-align: middle;
@@ -160,16 +238,8 @@ body {
   #about {
     position: relative;
     font-family: $primary-font-family;
-    padding: 0.5rem;
     margin-top: 6.25rem;
     margin-bottom: 6.25rem;
-  }
-
-  .about-wrapper {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
   }
 
   /*************** ABOUT TEXT *******************/
@@ -298,6 +368,68 @@ body {
 
     .px-btn.theme-t {
       margin-left: 20%;
+    }
+  }
+
+  /******************************* SERVICES ***********************************/
+  .services {
+    text-align: center;
+    padding-bottom: 2rem;
+    background: $primary-background-gradient;
+
+    h1 {
+      color: $primary-dark;
+      text-transform: uppercase;
+    }
+
+    .circle {
+      position: relative;
+      margin: 0.375rem auto;
+      background: $primary-background-gradient;
+      border-radius: 50%;
+      width: 3.125rem;
+      height: 3.125rem;
+    }
+
+    .icon {
+      font-size: 1.4rem;
+      color: $primary-white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .box {
+      width: 16rem;
+      height: 16rem;
+      border-radius: 50%;
+      display: inline-block;
+      border-bottom: 0.3125rem solid $primary-violet;
+      padding: 0.625rem;
+      margin-bottom: 1.875rem;
+      background: $primary-white;
+    }
+
+    .box:hover {
+      background: $primary-violet;
+      border-bottom: 0.3125rem solid $primary-dark;
+
+      .icon {
+        color: $primary-dark;
+      }
+
+      .circle {
+        background-color: $primary-white;
+      }
+
+      h3 {
+        color: $primary-blue;
+      }
+
+      p {
+        color: $primary-white;
+      }
     }
   }
 }

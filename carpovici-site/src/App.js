@@ -4,7 +4,7 @@ import Particles from 'react-particles-js';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import About from './components/About';
-import { Button } from 'bootstrap';
+import Services from './components/Services';
 
 function App() {
   return (
@@ -34,6 +34,8 @@ function App() {
         <Navbar />
         <Header />
         <About />
+        
+        <Services />
       </>
     </div>
   );
